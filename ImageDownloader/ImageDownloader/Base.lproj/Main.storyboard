@@ -37,7 +37,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-4S-GFE">
+                                    <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-4S-GFE">
                                         <rect key="frame" x="41" y="10" width="293" height="31"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.68594861029999998" blue="0.93986064199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="kHY-1R-2lK" detailTextLabel="Xlr-Vk-Mki" rowHeight="56" style="IBUITableViewCellStyleSubtitle" id="baR-fV-UPB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="kHY-1R-2lK" detailTextLabel="Xlr-Vk-Mki" rowHeight="56" style="IBUITableViewCellStyleSubtitle" id="baR-fV-UPB" customClass="FilesViewCell" customModule="ImageDownloader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baR-fV-UPB" id="sCJ-Ma-cDE">
@@ -67,14 +67,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kHY-1R-2lK">
-                                                    <rect key="frame" x="15" y="10" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="3" width="40" height="28"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xlr-Vk-Mki">
-                                                    <rect key="frame" x="15" y="31" width="33" height="15"/>
+                                                    <rect key="frame" x="15" y="31" width="43" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -86,8 +86,17 @@
                                                 </progressView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="progressFile" destination="y6T-7W-rSR" id="JDF-8G-ER7"/>
+                                            <outlet property="statusFile" destination="Xlr-Vk-Mki" id="642-e7-SWU"/>
+                                            <outlet property="titleFile" destination="kHY-1R-2lK" id="CVR-BY-f5V"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="e8Q-me-bJQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="otd-4o-mjh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,15 +114,86 @@
                         <leftBarButtonItems>
                             <barButtonItem systemItem="refresh" id="Mkq-we-IyD">
                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="btnActionReset:" destination="BYZ-38-t0r" id="Vy1-G2-yAT"/>
+                                </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="add" id="xX9-pf-ODt"/>
+                            <barButtonItem systemItem="add" id="xX9-pf-ODt">
+                                <connections>
+                                    <action selector="btnActionAdd:" destination="BYZ-38-t0r" id="Fw3-jk-3GB"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="pause" id="piV-xC-LH7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="pause" id="piV-xC-LH7">
+                            <connections>
+                                <action selector="btnActionPause:" destination="BYZ-38-t0r" id="tUF-Sq-e8G"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sliderDownload" destination="b6O-4S-GFE" id="UWa-eV-te1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860" y="-561.76911544227892"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="prK-ND-fNd">
+            <objects>
+                <collectionViewController storyboardIdentifier="ListViewController" id="Me4-Di-34n" customClass="ListViewController" customModule="ImageDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="faq-7P-n1k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zxQ-SD-VRI">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zDr-tz-i4d" customClass="ListViewCell" customModule="ImageDownloader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageDemo" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-lg-M00">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zij-5u-EWj">
+                                            <rect key="frame" x="5.5" y="24" width="39" height="22"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="zij-5u-EWj" firstAttribute="centerX" secondItem="zDr-tz-i4d" secondAttribute="centerX" id="QfD-ov-fa3"/>
+                                    <constraint firstItem="5L8-lg-M00" firstAttribute="leading" secondItem="zDr-tz-i4d" secondAttribute="leading" id="mCI-ds-hQT"/>
+                                    <constraint firstItem="5L8-lg-M00" firstAttribute="top" secondItem="zDr-tz-i4d" secondAttribute="top" id="n3x-ge-8Gf"/>
+                                    <constraint firstAttribute="bottom" secondItem="zij-5u-EWj" secondAttribute="bottom" constant="4" id="pll-w2-oYV"/>
+                                    <constraint firstAttribute="bottom" secondItem="5L8-lg-M00" secondAttribute="bottom" id="rGa-6j-A5I"/>
+                                    <constraint firstAttribute="trailing" secondItem="5L8-lg-M00" secondAttribute="trailing" id="x8v-UH-ax6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageFile" destination="5L8-lg-M00" id="nmi-qd-9ZQ"/>
+                                    <outlet property="statusFile" destination="zij-5u-EWj" id="PM1-qA-5Dh"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Me4-Di-34n" id="gVk-39-bU4"/>
+                            <outlet property="delegate" destination="Me4-Di-34n" id="vLB-wu-WFY"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kd3-xL-TZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="-561"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hAX-95-fIY">
@@ -133,19 +213,8 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="-560.86956521739137"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="uZb-Hd-ycE">
-            <objects>
-                <viewController id="sUr-LC-yqW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UCG-AH-89x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="97n-pJ-aDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1596" y="-562"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="imageDemo" width="900" height="1200"/>
+    </resources>
 </document>
