@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0940F9ED97F02AAEE6C211DF /* Pods_ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545250797FAA6894636296 /* Pods_ImageDownloader.framework */; };
 		B25A107F1E63E0EF00508217 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A107E1E63E0EF00508217 /* AppDelegate.swift */; };
-		B25A10811E63E0EF00508217 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A10801E63E0EF00508217 /* ViewController.swift */; };
+		B25A10811E63E0EF00508217 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A10801E63E0EF00508217 /* FilesViewController.swift */; };
 		B25A10841E63E0EF00508217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25A10821E63E0EF00508217 /* Main.storyboard */; };
 		B25A10861E63E0EF00508217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B25A10851E63E0EF00508217 /* Assets.xcassets */; };
 		B25A10891E63E0EF00508217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25A10871E63E0EF00508217 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		5194441549C785B5AD7EBD40 /* Pods-ImageDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		B25A107B1E63E0EF00508217 /* ImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25A107E1E63E0EF00508217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B25A10801E63E0EF00508217 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B25A10801E63E0EF00508217 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		B25A10831E63E0EF00508217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B25A10851E63E0EF00508217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B25A10881E63E0EF00508217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				B25A107E1E63E0EF00508217 /* AppDelegate.swift */,
-				B25A10801E63E0EF00508217 /* ViewController.swift */,
+				B25A10801E63E0EF00508217 /* FilesViewController.swift */,
 				B25A10821E63E0EF00508217 /* Main.storyboard */,
 				B25A10851E63E0EF00508217 /* Assets.xcassets */,
 				B25A10871E63E0EF00508217 /* LaunchScreen.storyboard */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B25A10811E63E0EF00508217 /* ViewController.swift in Sources */,
+				B25A10811E63E0EF00508217 /* FilesViewController.swift in Sources */,
 				B25A107F1E63E0EF00508217 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +377,7 @@
 				B25A108F1E63E0EF00508217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
