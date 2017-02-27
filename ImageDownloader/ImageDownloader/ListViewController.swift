@@ -49,11 +49,28 @@ extension ListViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ListViewCell
-        
-        
+
         // Configure the cell
         
+        cell.imageFile.image = UIImage(named: "imageDemo")
+        
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.collectionViewLayout.invalidateLayout()
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! ListViewCell
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let imageDetailViewController = storyBoard.instantiateViewController(withIdentifier: "ImageDetailViewController") as! ImageDetailViewController
+        
+        if let imageDetail:UIImage = cell.imageFile.image {
+            imageDetailViewController.tempImage = imageDetail
+        }
+        imageDetailViewController.textStatus = String(indexPath.row)+"/"+String(collectionView.numberOfItems(inSection: 0))
+        
+        present(imageDetailViewController, animated: true, completion: nil)
     }
     
     

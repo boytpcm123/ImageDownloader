@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -160,13 +161,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageDemo" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-lg-M00">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-lg-M00">
                                             <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zij-5u-EWj">
                                             <rect key="frame" x="5" y="32.5" width="40" height="12.5"/>
                                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="9"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -197,6 +199,57 @@
             </objects>
             <point key="canvasLocation" x="1554" y="-561"/>
         </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="Eic-DM-QPY">
+            <objects>
+                <viewController storyboardIdentifier="ImageDetailViewController" id="sOZ-fh-8Xh" customClass="ImageDetailViewController" customModule="ImageDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ian-Bd-G2o"/>
+                        <viewControllerLayoutGuide type="bottom" id="AtW-8R-jHg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NJW-fH-grz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ImageDetailView" translatesAutoresizingMaskIntoConstraints="NO" id="6IF-lV-O5u">
+                                <rect key="frame" x="-0.5" y="166.5" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvX-xB-Ru7">
+                                <rect key="frame" x="20" y="609" width="59" height="38"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="btnActionDismissView:" destination="sOZ-fh-8Xh" eventType="touchUpInside" id="asu-Lo-pmd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-rS-sQE">
+                                <rect key="frame" x="290" y="618" width="69" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6IF-lV-O5u" firstAttribute="centerY" secondItem="NJW-fH-grz" secondAttribute="centerY" id="Xqy-Ap-0iU"/>
+                            <constraint firstItem="dvX-xB-Ru7" firstAttribute="leading" secondItem="NJW-fH-grz" secondAttribute="leading" constant="20" id="q3c-QC-Pp9"/>
+                            <constraint firstItem="6IF-lV-O5u" firstAttribute="height" secondItem="NJW-fH-grz" secondAttribute="height" multiplier="1:2" id="rPh-Rh-a49"/>
+                            <constraint firstItem="AtW-8R-jHg" firstAttribute="top" secondItem="dvX-xB-Ru7" secondAttribute="bottom" constant="20" id="t8K-ip-jl8"/>
+                            <constraint firstItem="6IF-lV-O5u" firstAttribute="width" secondItem="NJW-fH-grz" secondAttribute="width" id="vHs-nW-5Wa"/>
+                            <constraint firstItem="6IF-lV-O5u" firstAttribute="centerX" secondItem="NJW-fH-grz" secondAttribute="centerX" id="xOq-Dw-yH2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageDetail" destination="6IF-lV-O5u" id="m1c-bk-dim"/>
+                        <outlet property="statusCurrentImage" destination="GPU-rS-sQE" id="g8m-Wl-yz6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFD-I0-YfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264.8000000000002" y="-561.76911544227892"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hAX-95-fIY">
             <objects>
@@ -216,7 +269,4 @@
             <point key="canvasLocation" x="117.59999999999999" y="-560.86956521739137"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="imageDemo" width="900" height="1200"/>
-    </resources>
 </document>

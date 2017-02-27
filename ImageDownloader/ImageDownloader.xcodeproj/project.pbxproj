@@ -16,6 +16,7 @@
 		B25A10911E63FD8700508217 /* FilesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A10901E63FD8700508217 /* FilesViewCell.swift */; };
 		B25A10981E64055D00508217 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A10971E64055D00508217 /* ListViewController.swift */; };
 		B25A109A1E640CC600508217 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A10991E640CC600508217 /* ListViewCell.swift */; };
+		B25A109C1E64188600508217 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A109B1E64188600508217 /* ImageDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B25A10901E63FD8700508217 /* FilesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewCell.swift; sourceTree = "<group>"; };
 		B25A10971E64055D00508217 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B25A10991E640CC600508217 /* ListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		B25A109B1E64188600508217 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		EA6E1B71DDA0A687188681E9 /* Pods-ImageDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		ED545250797FAA6894636296 /* Pods_ImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 			children = (
 				B25A10801E63E0EF00508217 /* FilesViewController.swift */,
 				B25A10971E64055D00508217 /* ListViewController.swift */,
+				B25A109B1E64188600508217 /* ImageDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				B25A10911E63FD8700508217 /* FilesViewCell.swift in Sources */,
 				B25A10811E63E0EF00508217 /* FilesViewController.swift in Sources */,
+				B25A109C1E64188600508217 /* ImageDetailViewController.swift in Sources */,
 				B25A109A1E640CC600508217 /* ListViewCell.swift in Sources */,
 				B25A10981E64055D00508217 /* ListViewController.swift in Sources */,
 				B25A107F1E63E0EF00508217 /* AppDelegate.swift in Sources */,
