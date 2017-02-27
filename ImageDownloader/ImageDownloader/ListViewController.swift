@@ -68,7 +68,7 @@ extension ListViewController {
         if let imageDetail:UIImage = cell.imageFile.image {
             imageDetailViewController.tempImage = imageDetail
         }
-        imageDetailViewController.textStatus = String(indexPath.row)+"/"+String(collectionView.numberOfItems(inSection: 0))
+        imageDetailViewController.textStatus = String(indexPath.row + 1)+"/"+String(collectionView.numberOfItems(inSection: 0))
         
         present(imageDetailViewController, animated: true, completion: nil)
     }

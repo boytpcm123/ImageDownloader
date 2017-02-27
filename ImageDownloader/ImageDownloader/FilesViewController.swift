@@ -18,6 +18,10 @@ class FilesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if let urlFile:NSURL = NSURL(string: Const.urlFileZip) {
+            Downloader.data_request(urlRequest: urlFile)
+        }
     }
 
     

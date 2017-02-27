@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0940F9ED97F02AAEE6C211DF /* Pods_ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545250797FAA6894636296 /* Pods_ImageDownloader.framework */; };
+		B241C9BB1E6427A200683F19 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241C9BA1E6427A200683F19 /* Const.swift */; };
+		B241C9BD1E6427DE00683F19 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241C9BC1E6427DE00683F19 /* Common.swift */; };
+		B241C9BF1E642D6700683F19 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241C9BE1E642D6700683F19 /* Downloader.swift */; };
 		B25A107F1E63E0EF00508217 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A107E1E63E0EF00508217 /* AppDelegate.swift */; };
 		B25A10811E63E0EF00508217 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A10801E63E0EF00508217 /* FilesViewController.swift */; };
 		B25A10841E63E0EF00508217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B25A10821E63E0EF00508217 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		5194441549C785B5AD7EBD40 /* Pods-ImageDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		B241C9BA1E6427A200683F19 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		B241C9BC1E6427DE00683F19 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		B241C9BE1E642D6700683F19 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		B25A107B1E63E0EF00508217 /* ImageDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25A107E1E63E0EF00508217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B25A10801E63E0EF00508217 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +71,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B241C9B91E64269D00683F19 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B241C9BA1E6427A200683F19 /* Const.swift */,
+				B241C9BC1E6427DE00683F19 /* Common.swift */,
+				B241C9BE1E642D6700683F19 /* Downloader.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		B25A10721E63E0EE00508217 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +102,7 @@
 		B25A107D1E63E0EF00508217 /* ImageDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				B241C9B91E64269D00683F19 /* Utils */,
 				B25A10921E63FD8D00508217 /* Cell */,
 				B25A10931E63FD9300508217 /* Controller */,
 				B25A10941E63FD9C00508217 /* View */,
@@ -160,6 +177,7 @@
 					B25A107A1E63E0EF00508217 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 43WM5893US;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -248,12 +266,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B241C9BD1E6427DE00683F19 /* Common.swift in Sources */,
 				B25A10911E63FD8700508217 /* FilesViewCell.swift in Sources */,
 				B25A10811E63E0EF00508217 /* FilesViewController.swift in Sources */,
 				B25A109C1E64188600508217 /* ImageDetailViewController.swift in Sources */,
 				B25A109A1E640CC600508217 /* ListViewCell.swift in Sources */,
+				B241C9BF1E642D6700683F19 /* Downloader.swift in Sources */,
 				B25A10981E64055D00508217 /* ListViewController.swift in Sources */,
 				B25A107F1E63E0EF00508217 /* AppDelegate.swift in Sources */,
+				B241C9BB1E6427A200683F19 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
