@@ -68,14 +68,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kHY-1R-2lK">
-                                                    <rect key="frame" x="15" y="3" width="40" height="28"/>
+                                                    <rect key="frame" x="15" y="4" width="40" height="27.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xlr-Vk-Mki">
-                                                    <rect key="frame" x="15" y="31" width="43" height="22"/>
+                                                    <rect key="frame" x="15" y="31.5" width="42.5" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -223,9 +223,8 @@
                                     <action selector="btnActionDismissView:" destination="sOZ-fh-8Xh" eventType="touchUpInside" id="asu-Lo-pmd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-rS-sQE">
-                                <rect key="frame" x="290" y="618" width="69" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-rS-sQE">
+                                <rect key="frame" x="326.5" y="609" width="28.5" height="38"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -233,7 +232,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GPU-rS-sQE" secondAttribute="trailing" constant="20" id="3vY-KP-oCW"/>
                             <constraint firstItem="6IF-lV-O5u" firstAttribute="centerY" secondItem="NJW-fH-grz" secondAttribute="centerY" id="Xqy-Ap-0iU"/>
+                            <constraint firstItem="AtW-8R-jHg" firstAttribute="top" secondItem="GPU-rS-sQE" secondAttribute="bottom" constant="20" id="Y4i-JI-KTx"/>
+                            <constraint firstItem="GPU-rS-sQE" firstAttribute="centerY" secondItem="dvX-xB-Ru7" secondAttribute="centerY" id="iyB-tm-DRe"/>
                             <constraint firstItem="dvX-xB-Ru7" firstAttribute="leading" secondItem="NJW-fH-grz" secondAttribute="leading" constant="20" id="q3c-QC-Pp9"/>
                             <constraint firstItem="6IF-lV-O5u" firstAttribute="height" secondItem="NJW-fH-grz" secondAttribute="height" multiplier="1:2" id="rPh-Rh-a49"/>
                             <constraint firstItem="AtW-8R-jHg" firstAttribute="top" secondItem="dvX-xB-Ru7" secondAttribute="bottom" constant="20" id="t8K-ip-jl8"/>
