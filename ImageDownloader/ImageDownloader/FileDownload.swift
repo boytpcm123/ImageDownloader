@@ -12,12 +12,13 @@ class FileDownload {
     var _nameFile = ""
     var _pathFile = ""
     var _numberOfContent = 0
+    var _dataOfContent = [String]()
     
-    init(nameFile: String, numberOfContent: Int) {
+    init(nameFile: String, pathFile: String, numberOfContent: Int, dataOfContent: [String]) {
         self._nameFile = nameFile
-        let fileName = self._nameFile+".json"
-        self._pathFile = Const.documentsUrl.appendingPathComponent(fileName).path
+        self._pathFile = pathFile
         self._numberOfContent = numberOfContent
+        self._dataOfContent = dataOfContent
     }
     
     

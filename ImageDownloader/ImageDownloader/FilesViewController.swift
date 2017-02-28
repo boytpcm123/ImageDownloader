@@ -40,16 +40,7 @@ class FilesViewController: UIViewController {
         Common.ListFileDownload = [FileDownload]()
         reloadDataTableFile()
         
-        //Create a FileManager instance
-        let fileManager = FileManager.default
-        //Delete file 
-        do {
-            try fileManager.removeItem(atPath: Const.pathFolderName.path)
-            try fileManager.removeItem(atPath: Const.pathZipFile.path)
-        }
-        catch let error as NSError {
-            print("Ooops! Something went wrong: \(error)")
-        }
+        deleteFile()
     }
    
     @IBAction func btnActionAdd(_ sender: UIBarButtonItem) {
@@ -65,6 +56,21 @@ class FilesViewController: UIViewController {
     
     @IBAction func btnActionPause(_ sender: UIBarButtonItem) {
         print("Pause button click")
+    }
+    
+    func deleteFile() {
+       
+        
+        //Create a FileManager instance
+        let fileManager = FileManager.default
+        //Delete file
+        do {
+            try fileManager.removeItem(atPath: Const.pathFolderName.path)
+            try fileManager.removeItem(atPath: Const.pathZipFile.path)
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
     }
     
     func reloadDataTableFile()  {
@@ -121,6 +127,7 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let listViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         listViewController.title = cell.titleFile.text
+        listViewController.indexList = indexPath.row
         
         self.navigationController?.pushViewController(listViewController, animated: true)
         

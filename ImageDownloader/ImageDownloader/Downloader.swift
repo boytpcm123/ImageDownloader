@@ -69,9 +69,14 @@ class Downloader
         
         for (_, item) in items.enumerated() {
             if item.hasSuffix("json") {
+
                 if let name:String = (item.components(separatedBy: ".").first) {
-                    print(name)
-                    let fileDownload: FileDownload = FileDownload(nameFile: name, numberOfContent: 0)
+                    let filePath = Const.pathFolderName.appendingPathComponent(name).appendingPathExtension("json").path
+                    //print(filePath)
+                    
+                    let arrayFile = getDataFile(filePath)
+
+                    let fileDownload: FileDownload = FileDownload(nameFile: name, pathFile: filePath, numberOfContent: arrayFile.count, dataOfContent: arrayFile)
                     Common.ListFileDownload.append(fileDownload)
                     
                 }
@@ -84,6 +89,24 @@ class Downloader
         
         //Post a notification
         NotificationCenter.default.post(name: Const.notificationDownloadedZip, object: nil)
+    }
+    
+    static func getDataFile(_ filePath: String) -> [String] {
+        do {
+            if let data = NSData(contentsOfFile: filePath) {
+                let jsons = try JSONSerialization.jsonObject(with: data as Data, options: .mutableContainers)
+
+                return jsons as! [String]
+            } else {
+                print("error cannot read data")
+            }
+            
+        }
+        catch {
+            print("error cannot find file")
+        }
+        
+        return []
     }
     
 }

@@ -10,8 +10,11 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+
 class ListViewController: UICollectionViewController {
 
+    var indexList:Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +47,7 @@ extension ListViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 10
+        return Common.ListFileDownload[indexList]._numberOfContent
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
