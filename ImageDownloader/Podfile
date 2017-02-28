@@ -6,5 +6,6 @@ target 'ImageDownloader' do
   use_frameworks!
 
   # Pods for ImageDownloader
+  pod 'SSZipArchive'
 
 end
