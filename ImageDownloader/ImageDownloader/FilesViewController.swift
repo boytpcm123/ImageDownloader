@@ -71,10 +71,25 @@ class FilesViewController: UIViewController {
         DispatchQueue.main.async(execute: {
             self.tableFile.reloadData()
         });
-        print("vo day rui ne")
+        
         // Stop listening notification
         NotificationCenter.default.removeObserver(self, name: Const.notificationDownloadedZip, object: nil);
     }
+    
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        //Restrict slider to a fixed value
+        let fixed = roundf(sender.value / 1.0) * 1.0;
+        sender.setValue(fixed, animated: true)
+        
+        handleDownload()
+    }
+    
+    func handleDownload()  {
+        print("handle Download")
+    }
+   
+    
 
 }
 

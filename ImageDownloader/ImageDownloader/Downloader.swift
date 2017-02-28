@@ -77,8 +77,10 @@ class Downloader
                 }
                
             }
-            
         }
+        
+//        let jsonItems = items.filter({ return $0.hasSuffix("json") })
+//        Common.ListFileDownload = jsonItems.map({ return FileDownload(nameFile: $0.components(separatedBy: ".").first!, numberOfContent: 0) })
         
         //Post a notification
         NotificationCenter.default.post(name: Const.notificationDownloadedZip, object: nil)
