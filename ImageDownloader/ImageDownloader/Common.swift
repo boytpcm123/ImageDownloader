@@ -10,5 +10,5 @@ import Foundation
 
 
 class  Common {
-    
+    static var ListFileDownload = [FileDownload]() 
 }

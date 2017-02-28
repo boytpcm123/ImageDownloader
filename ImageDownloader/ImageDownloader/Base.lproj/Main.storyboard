@@ -132,7 +132,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnAdd" destination="xX9-pf-ODt" id="W2z-MF-yhM"/>
+                        <outlet property="btnPause" destination="piV-xC-LH7" id="Crb-7S-v63"/>
+                        <outlet property="btnReset" destination="Mkq-we-IyD" id="coq-Kx-iBV"/>
                         <outlet property="sliderDownload" destination="b6O-4S-GFE" id="UWa-eV-te1"/>
+                        <outlet property="tableFile" destination="lIP-dM-jrE" id="4cf-Tt-Oku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

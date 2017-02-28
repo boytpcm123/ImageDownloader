@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0940F9ED97F02AAEE6C211DF /* Pods_ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545250797FAA6894636296 /* Pods_ImageDownloader.framework */; };
+		B2193A9B1E654CEF00FB1513 /* FileDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2193A9A1E654CEF00FB1513 /* FileDownload.swift */; };
 		B241C9BB1E6427A200683F19 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241C9BA1E6427A200683F19 /* Const.swift */; };
 		B241C9BD1E6427DE00683F19 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241C9BC1E6427DE00683F19 /* Common.swift */; };
 		B241C9BF1E642D6700683F19 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241C9BE1E642D6700683F19 /* Downloader.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		5194441549C785B5AD7EBD40 /* Pods-ImageDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageDownloader/Pods-ImageDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		B2193A9A1E654CEF00FB1513 /* FileDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownload.swift; sourceTree = "<group>"; };
 		B241C9BA1E6427A200683F19 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		B241C9BC1E6427DE00683F19 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B241C9BE1E642D6700683F19 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B2193A991E654BE300FB1513 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2193A9A1E654CEF00FB1513 /* FileDownload.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B241C9B91E64269D00683F19 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 			children = (
 				B241C9B91E64269D00683F19 /* Utils */,
 				B25A10921E63FD8D00508217 /* Cell */,
+				B2193A991E654BE300FB1513 /* Model */,
 				B25A10931E63FD9300508217 /* Controller */,
 				B25A10941E63FD9C00508217 /* View */,
 				B25A107E1E63E0EF00508217 /* AppDelegate.swift */,
@@ -273,6 +284,7 @@
 				B25A109A1E640CC600508217 /* ListViewCell.swift in Sources */,
 				B241C9BF1E642D6700683F19 /* Downloader.swift in Sources */,
 				B25A10981E64055D00508217 /* ListViewController.swift in Sources */,
+				B2193A9B1E654CEF00FB1513 /* FileDownload.swift in Sources */,
 				B25A107F1E63E0EF00508217 /* AppDelegate.swift in Sources */,
 				B241C9BB1E6427A200683F19 /* Const.swift in Sources */,
 			);
