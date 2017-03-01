@@ -11,6 +11,14 @@ import SSZipArchive
 
 class Downloader
 {
+    
+    class func downloadImageWithURL(url:String) -> UIImage! {
+        
+        let data = NSData(contentsOf: NSURL(string: url)! as URL)
+        return UIImage(data: data! as Data)
+    }
+
+    
     static func downloadFileZip()
     {
    

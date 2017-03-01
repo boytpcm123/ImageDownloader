@@ -15,6 +15,13 @@ class ListViewController: UICollectionViewController {
 
     var indexList:Int!
     
+    
+    
+    @IBOutlet var collectionListImage: UICollectionView!
+    
+    
+    var album: Album?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +32,7 @@ class ListViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        
+        collectionListImage.reloadData()
 
         // Do any additional setup after loading the view.
     }
@@ -33,6 +40,8 @@ class ListViewController: UICollectionViewController {
     func OnMenuReloadClicked(_ sender: UIBarButtonItem)  {
         print("Reload button click")
     }
+    
+    
 
 
 }
@@ -47,15 +56,16 @@ extension ListViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return Common.ListFileDownload[indexList]._numberOfContent
+        return album?.photos.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ListViewCell
 
         // Configure the cell
-        
-        cell.imageFile.image = UIImage(named: "imageDemo")
+
+        cell.photo = album?.photos[(indexPath as NSIndexPath).row]
+       
         
         return cell
     }
