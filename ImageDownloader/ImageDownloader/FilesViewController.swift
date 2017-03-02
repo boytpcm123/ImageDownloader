@@ -213,7 +213,7 @@ class FilesViewController: UIViewController {
     }
     
     func  beginDownloadData()  {
-        
+        overallProgress = album?.importPhotos()
         
         
     }

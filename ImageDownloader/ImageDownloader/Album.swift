@@ -12,7 +12,7 @@ import UIKit
 class Album: NSObject {
     // MARK: Properties
 
-    let photos: [Photo]
+    var photos: [Photo]
 
     // MARK: Initializers
 
@@ -21,7 +21,18 @@ class Album: NSObject {
             fatalError("Unable to load photos")
         }
         
+        
+       
+        
         photos = imageURLs.map { Photo(URL: $0) }
+        
+        if  Common.ListFileDownload.count > 0 {
+            let arraysImage = Common.ListFileDownload[0]._dataOfContent
+            photos = arraysImage.map { Photo(URL: URL(string:$0)!) }
+            print("thong")
+        }
+        
+        
     }
     
     func importPhotos() -> Progress {
