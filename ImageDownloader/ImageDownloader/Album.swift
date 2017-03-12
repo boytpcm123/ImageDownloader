@@ -38,7 +38,7 @@ class Album: NSObject {
     func importPhotos() -> Progress {
         
         if  Common.ListFileDownload.count > 0 {
-            let arraysImage = Common.ListFileDownload[0]._dataOfContent
+            let arraysImage = Common.ListFileDownload[2]._dataOfContent
             photos = arraysImage.map { Photo(URL: URL(string:$0)!) }
             print("thong")
         }

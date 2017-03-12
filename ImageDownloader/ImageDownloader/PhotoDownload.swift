@@ -219,12 +219,8 @@ class PhotoDownload: NSObject, ProgressReporting {
     */
     func didDownloadData(_ data: Data, numberOfBytes: Int) {
         // Move to a background thread to do some long running work
-        DispatchQueue.global(qos: .userInitiated).async {
-            // Bounce back to the main thread to update the UI
-            DispatchQueue.main.async {
-                self.progress.completedUnitCount = Int64(numberOfBytes)
-            }
-        }
+         self.progress.completedUnitCount = Int64(numberOfBytes)
+        
     }
     
     /// Called when the "download" is completed.
