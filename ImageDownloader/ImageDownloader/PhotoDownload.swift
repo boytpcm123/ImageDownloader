@@ -218,7 +218,13 @@ class PhotoDownload: NSObject, ProgressReporting {
         aggregated values, and contain the entire download up to that point.
     */
     func didDownloadData(_ data: Data, numberOfBytes: Int) {
-        progress.completedUnitCount = Int64(numberOfBytes)
+        // Move to a background thread to do some long running work
+        DispatchQueue.global(qos: .userInitiated).async {
+            // Bounce back to the main thread to update the UI
+            DispatchQueue.main.async {
+                self.progress.completedUnitCount = Int64(numberOfBytes)
+            }
+        }
     }
     
     /// Called when the "download" is completed.

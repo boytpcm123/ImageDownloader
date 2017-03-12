@@ -12,19 +12,30 @@ import UIKit
 class Album: NSObject {
     // MARK: Properties
 
-    var photos: [Photo]
+    var photos: [Photo] = []
+    
 
     // MARK: Initializers
 
-    override init () {
-        guard let imageURLs = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: "Photos") else {
-            fatalError("Unable to load photos")
-        }
+//    override init () {
+//        guard let imageURLs = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: "Photos") else {
+//            fatalError("Unable to load photos")
+//        }
+//        
+// 
+//        
+//        photos = imageURLs.map { Photo(URL: $0) }
+//        
+//        if  Common.ListFileDownload.count > 0 {
+//            let arraysImage = Common.ListFileDownload[0]._dataOfContent
+//            photos = arraysImage.map { Photo(URL: URL(string:$0)!) }
+//            print("thong")
+//        }
         
         
-       
-        
-        photos = imageURLs.map { Photo(URL: $0) }
+//    }
+    
+    func importPhotos() -> Progress {
         
         if  Common.ListFileDownload.count > 0 {
             let arraysImage = Common.ListFileDownload[0]._dataOfContent
@@ -32,10 +43,6 @@ class Album: NSObject {
             print("thong")
         }
         
-        
-    }
-    
-    func importPhotos() -> Progress {
         let progress = Progress()
         progress.totalUnitCount = Int64(photos.count)
         

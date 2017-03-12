@@ -90,7 +90,7 @@ class FilesViewController: UIViewController {
     }
     
     fileprivate func updateToolbar() {
-        var items = [UIBarButtonItem]()
+        let items = [UIBarButtonItem]()
         
         if let overallProgress = overallProgress {
             if overallProgressIsFinished || overallProgress.isCancelled {

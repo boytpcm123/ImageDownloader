@@ -42,7 +42,7 @@ class ListViewCell: UICollectionViewCell {
     fileprivate func updateProgressView() {
         if let photoImport = photo?.photoImport {
             let fraction = Float(photoImport.progress.fractionCompleted)
-            statusFile.text = String(fraction)
+            statusFile.text = String(format: "%.2f", fraction * 100)
             
             statusFile.isHidden = false
         }
