@@ -17,31 +17,11 @@ class Album: NSObject {
 
     // MARK: Initializers
 
-//    override init () {
-//        guard let imageURLs = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: "Photos") else {
-//            fatalError("Unable to load photos")
-//        }
-//        
-// 
-//        
-//        photos = imageURLs.map { Photo(URL: $0) }
-//        
-//        if  Common.ListFileDownload.count > 0 {
-//            let arraysImage = Common.ListFileDownload[0]._dataOfContent
-//            photos = arraysImage.map { Photo(URL: URL(string:$0)!) }
-//            print("thong")
-//        }
-        
-        
-//    }
+
     
     func importPhotos() -> Progress {
         
-        if  Common.ListFileDownload.count > 0 {
-            let arraysImage = Common.ListFileDownload[6]._dataOfContent
-            photos = arraysImage.map { Photo(URL: URL(string:$0)!) }
-            print("thong")
-        }
+        
         
         let progress = Progress()
         progress.totalUnitCount = Int64(photos.count)

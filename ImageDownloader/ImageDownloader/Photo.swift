@@ -93,8 +93,8 @@ class Photo: NSObject {
     }
     
     func converDataZipToDataImage(_ data: Data) -> UIImage? {
-        var newData = data
-        var imageZip: UIImage = nil
+        let newData = data
+        var imageZip: UIImage? = nil
         
         print("Unzip file...")
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
@@ -122,7 +122,7 @@ class Photo: NSObject {
                         do {
                             let imageData = try Data(contentsOf: imageUrl)
                             if let image = UIImage(data: imageData) {
-                                imageZip = image
+                                imageZip =  image
                             }
                         } catch {
                             
@@ -137,7 +137,9 @@ class Photo: NSObject {
             }
         }
         
-        return nil
+       
+        
+        return imageZip
     }
     
     fileprivate func reportError(_ error: NSError) {

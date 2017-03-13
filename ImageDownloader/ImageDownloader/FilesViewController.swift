@@ -19,7 +19,7 @@ private var photosViewControllerObservationContext = 0
 class FilesViewController: UIViewController {
     
     /// The album that the app is importing
-    fileprivate var album: Album?
+    fileprivate var album: [Album] = []
     
     /// Keys that we observe on `overallProgress`.
     fileprivate let overalProgressObservedKeys = [
@@ -117,9 +117,7 @@ class FilesViewController: UIViewController {
     
     // MARK: Nib Loading
     
-    override func awakeFromNib() {
-        album = Album()
-    }
+   
     
     
     
@@ -213,8 +211,17 @@ class FilesViewController: UIViewController {
     }
     
     func  beginDownloadData()  {
-        overallProgress = album?.importPhotos()
+       
         
+        let  total = Common.ListFileDownload.count
+        for i in 0 ..< total  {
+            let arraysImage = Common.ListFileDownload[i]._dataOfContent
+            let albumFile = Album()
+            albumFile.photos = arraysImage.map { Photo(URL: URL(string:$0)!) }
+            album.append(albumFile)
+            print(albumFile.photos);
+            
+        }
         
     }
     
@@ -250,6 +257,11 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.statusFile.text = "Downloading..."
         cell.progressFile.progress = 0.5
         
+        if overallProgress == nil {
+            overallProgress = album[indexPath.row].importPhotos()
+           
+        }
+        
         return cell
     }
     
@@ -264,7 +276,7 @@ extension FilesViewController: UITableViewDataSource, UITableViewDelegate {
         let listViewController = storyBoard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         listViewController.title = cell.titleFile.text
         listViewController.indexList = indexPath.row
-        listViewController.album = album
+        listViewController.album = album[indexPath.row]
         
         self.navigationController?.pushViewController(listViewController, animated: true)
         

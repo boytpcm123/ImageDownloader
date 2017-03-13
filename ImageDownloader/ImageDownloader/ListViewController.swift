@@ -39,6 +39,8 @@ class ListViewController: UICollectionViewController {
         collectionListImage.reloadData()
 
         // Do any additional setup after loading the view.
+        
+        print(album)
     }
 
     func OnMenuReloadClicked(_ sender: UIBarButtonItem)  {
