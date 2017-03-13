@@ -8,7 +8,14 @@
 
 import Foundation
 
+enum FileType: String {
+    case PDF = "PDF"
+    case ZIP = "ZIP"
+
+}
 
 class  Common {
-    static var ListFileDownload = [FileDownload]() 
+    static var ListFileDownload = [FileDownload]()
+    
+    
 }

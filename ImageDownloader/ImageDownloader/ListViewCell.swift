@@ -47,8 +47,8 @@ class ListViewCell: UICollectionViewCell {
             //statusFile.isHidden = false
         }
         else {
-            //statusFile.isHidden = true
-            statusFile.text = String("Downloaded")
+            statusFile.isHidden = true
+           // statusFile.text = String("Downloaded")
         }
     }
     

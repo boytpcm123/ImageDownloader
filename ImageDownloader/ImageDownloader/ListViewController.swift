@@ -20,7 +20,11 @@ class ListViewController: UICollectionViewController {
     @IBOutlet var collectionListImage: UICollectionView!
     
     
-    var album: Album?
+    var album: Album? {
+        didSet {
+            self.collectionView?.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +68,7 @@ extension ListViewController {
 
         // Configure the cell
 
-        cell.photo = album?.photos[(indexPath as NSIndexPath).row]
+        cell.photo = album?.photos[indexPath.row]
        
         
         return cell

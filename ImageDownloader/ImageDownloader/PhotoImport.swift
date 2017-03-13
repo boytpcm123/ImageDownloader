@@ -12,7 +12,7 @@ import UIKit
 class PhotoImport: NSObject, ProgressReporting {
     // MARK: Properties
 
-    var completionHandler: ((_ image: UIImage?, _ error: NSError?) -> Void)?
+    var completionHandler: ((_ data: Data?, _ error: NSError?) -> Void)?
 
     let progress: Progress
 
@@ -39,8 +39,9 @@ class PhotoImport: NSObject, ProgressReporting {
         progress.addChild(download.progress, withPendingUnitCount: 9)
 
         download.completionHandler = { data, error in
-            guard let imageData = data, let image = UIImage(data: imageData as Data) else {
-                self.callCompletionHandler(image: nil, error: error)
+            
+            guard let data = data else {
+                self.callCompletionHandler(data: nil, error: error)
                 return
             }
 
@@ -49,18 +50,18 @@ class PhotoImport: NSObject, ProgressReporting {
                 supports implicit progress reporting, it will add its progress
                 to ours.
             */
-            self.progress.becomeCurrent(withPendingUnitCount: 1)
-            let filteredImage = PhotoFilter.filteredImage(image)
-            self.progress.resignCurrent()
+//            self.progress.becomeCurrent(withPendingUnitCount: 1)
+//            let filteredImage = PhotoFilter.filteredImage(image)
+//            self.progress.resignCurrent()
             
-            self.callCompletionHandler(image: filteredImage, error: nil)
+            self.callCompletionHandler(data: data, error: nil)
         }
 
         download.start()
     }
     
-    fileprivate func callCompletionHandler(image: UIImage?, error: NSError?) {
-        completionHandler?(image, error)
+    fileprivate func callCompletionHandler(data: Data?, error: NSError?) {
+        completionHandler?(data, error)
         completionHandler = nil
     }
 }
