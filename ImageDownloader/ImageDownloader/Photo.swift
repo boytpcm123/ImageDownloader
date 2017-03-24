@@ -50,7 +50,7 @@ class Photo: NSObject {
                         self.image = image
                     }
                 }
-                print(data)
+               // print(data)
                 
                
             }

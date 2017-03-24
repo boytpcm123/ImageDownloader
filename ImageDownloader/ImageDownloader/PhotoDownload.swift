@@ -219,7 +219,7 @@ class PhotoDownload: NSObject, ProgressReporting {
     */
     func didDownloadData(_ data: Data, numberOfBytes: Int) {
         // Move to a background thread to do some long running work
-        // progress.completedUnitCount = Int64(numberOfBytes)
+         progress.completedUnitCount = Int64(numberOfBytes)
         
     }
     
