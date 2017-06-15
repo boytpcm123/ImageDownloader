@@ -9,7 +9,7 @@
 import Foundation
 
 class Const {
-    static let urlFileZip = "https://dl.dropboxusercontent.com/s/zids2qjgol2m2mj/JSON%20files%20updated.zip";
+    static let urlFileZip = "https://dl.dropboxusercontent.com/u/4529715/JSON%20files%20updated.zip";
     
     static let fileUrl = URL(string: urlFileZip)
     static let fileName = fileUrl?.lastPathComponent
